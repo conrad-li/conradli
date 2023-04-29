@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-theme={{site.default_theme}}>
+
+<head>
+  {% include head.html %}
+
+  <meta name="Description" content="My portfolio">
+
+  {% seo %}
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="layout-header">
+
+      {% include header.html %}
+
+    </div>
+    
+
+    <div class="layout-content">
+      <h1 class="page-header">Portfolio</h1>
+
+      {% assign portfolio = site.portfolio | sort: 'date' %}
+
+      <div class="portfolio-grid">
+        {% for proj in portfolio %}
+        <a href="{{ site.url}}{{ proj.url }}">
+          <div class="project-item">
+            <img class="project-display" src="{{ site.baseurl }}{{ proj.display }}">
+            <h2 class="project-title">{{proj.title}}</h2>
+            <!-- <time class="project-date">{{ proj.date | date: "%m-%d-%Y" }}</time> -->
+          </div>
+        </a>
+
+        {% endfor %}
+
+      </div>
+
+
+    </div>
+
+    <div class="layout-footer"> 
+      {% include footer.html %}
+    </div>
+  </div>
+
+
+  <!-- Scripts go below here -->
+  <script type="text/javascript" src="{{ '/assets/js/main.js' | relative_url }} "></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</body>
+
+</html>

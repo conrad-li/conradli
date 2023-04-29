@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-theme={{site.default_theme}}>
+
+<head>
+  {% include head.html %}
+  <meta name="Description" content="Welcome to my personal website!">
+  {% seo %}
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="layout-header">
+      {% include header.html %}
+    </div>
+
+
+    <div class="layout-content">
+      {{ content }}
+      <section class="about">
+        <h1 class="page-header">Hello, I'm Conrad!</h1>
+        <p id="about">
+          {{ site.about }}
+        </p>
+      </section>
+
+
+
+      <section class="blog">
+        <h1 class="latest-post-header">Latest Posts</h1>
+
+        <ul>
+          {% for post in site.posts limit:3 %}
+          <li class="blog-entry">
+
+            <a href="{{ post.url }}">
+              <div class="blog-header" href="{{ post.url }}">
+                <h2>{{ post.title }}</h2>
+                <time datetime="{{ post.date | date: "%m-%d-%Y" }}">{{ post.date | date_to_long_string }}</time>
+              </div>
+
+
+              <div class="excerpt">
+                {{ post.excerpt | strip_html | strip_newlines | truncate: 150 }}
+
+              </div>
+            </a>
+
+          </li>
+          {% endfor %}
+        </ul>
+
+        {% assign postNum = site.posts | size %}
+        {% if postNum > 3 %}
+        <div>
+          <a href="{{ '/blog/' | relative_url }}" style="display:block;">
+            <button class="see-all-btn">
+              <h3>More 
+                
+                &raquo;</h3>
+            </button>
+          </a>
+        </div>
+       
+        {% endif %}
+
+      </section>
+
+      <h1 class="latest-post-header">Photography</h1>
+
+      <section class="photo-grid">
+        {% assign photography = site.photography | sort: 'date' | reverse %}
+        {% for photo in photography limit:2 %}
+
+        <a href="{{ site.url }}{{ photo.url }}">
+
+          <div class="photo-item">
+            <img class="photo-display" src="{{ site.baseurl }}{{ photo.display }}"
+            alt="Polaroid image for {{ photo.place }}, {{ photo.country }}">
+            <h2 class="photo-title">{{photo.place}}, {{photo.country}}</h2>
+            <h3 class="photo-date">{{ photo.date | date: "%m-%d-%Y" }}</h3>
+          </div>
+        </a>
+
+        {% endfor %}
+
+      </section>
+      
+      {% assign postNum = site.photography | size %}
+      {% if postNum > 2 %}
+      <a href="{{ '/photography/' | relative_url }}">
+        <button class="see-all-btn">
+          <h3>More &raquo;</h3>
+        </button>
+      </a>
+      {% endif %}
+
+    </div>
+
+    <div class="layout-footer">
+      {% include footer.html %}
+    </div>
+  </div>
+
+
+  <!-- Scripts go below here -->
+  <script type="text/javascript" src="{{ '/assets/js/main.js' | relative_url }} "></script>
+
+</body>
+
+</html>

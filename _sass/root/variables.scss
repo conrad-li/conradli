@@ -1,0 +1,109 @@
+//Sans-serif fonts
+$font-apple-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-open-sans: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+//serif fonts
+$font-times: "Times New Roman", Times, serif;
+$font-georgia: "Georgia", serif;
+$font-palatino: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+
+// resume variables 
+$grid-gutter: 10px !default;
+
+
+@font-face {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto');
+    font-display: swap;
+}
+
+
+:root {
+    // Container width
+    --wrapper-width: 968px;
+    --header-width: 270px;
+    --header-height: 590px; // 650 for portfolio, 620 for contact
+    --section-width: 640px;
+    --section-height: 768px;
+
+    --layout-header-top-height: 260px;
+    --layout-header-middle-height: 234px; // 286 for portfolio, 260 for contact
+    --layout-header-bottom-height: 50px;
+
+    --layout-header-middle-border: 1px solid var(--font-color);
+
+    --sans-font: 'Open Sans', sans-serif;
+    --serif-font: "Times New Roman", Times, serif;
+    --font-family: 'Open Sans', sans-serif;
+}
+
+[data-theme="dark"] {
+    --primary-color: #39393f;
+    --secondary-color: #74b9ff;
+    --inner-box-shadow: #e4e4e4;
+    --highlight-nav-color: rgb(65, 64, 64);
+
+    --header-color: var(--secondary-color);
+    --font-color: #e5e5e5;
+    --bg-color: #2e2e33;
+
+    --social-icon-color: rgb(180, 180, 180);
+    --social-icon-color-hover: #f9f9f9;
+    
+    --blogpost-color-hover: rgba(65,64,64, .45);
+    --hyperlink-color-hover: white;
+
+    --border-color: #74baff71;
+    --border-bottom-color: #74baff71;
+
+    --photo-border-color: black;
+    --photo-bg-color: white;
+
+    h1, h2, h3, h4, h5, h6, p, input, textarea {
+        filter: brightness(0.85) contrast(1.1);
+    }
+
+    .photo-item, .image-img {
+        filter: brightness(0.85) contrast(1.1);
+    }
+
+    .image-img {
+        background-color: rgba($color: black, $alpha: .4);
+    }
+}
+
+[data-theme="light"] {
+    --primary-color: #fafafa;
+    --secondary-color: #f28482; //#f28482 // #ef476f #82c0cc
+    --inner-box-shadow: rgba(0, 0, 0, 0.74);
+    --highlight-nav-color: rgb(224,224,224);
+
+    --header-color: var(--secondary-color);
+    --font-color: #333;
+    --bg-color: rgb(245, 245, 245);
+
+    
+    --social-icon-color: rgb(8, 8, 8);
+    --social-icon-color-hover: rgb(180, 180, 180);
+    --blogpost-color-hover: rgba(234, 234, 234, 0.45);
+    --hyperlink-color-hover: black;
+
+    --border-color: #f284825b;
+    --border-bottom-color: #f284825b;
+
+
+    --photo-border-color: black;
+    --photo-bg-color: white;
+
+    h1, h2, h3, h4, h5, h6, p, input, textarea, .photo-item, .image-img {
+        filter: none;
+    }
+
+    .image-img {
+        background-color: rgba($color: black, $alpha: .9);
+    }
+
+}
+

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" data-theme={{site.default_theme}}>
+
+<head>
+  {% include head.html %}
+  
+  <meta name="Description" content="Contact page">
+
+  {% seo %}
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="layout-header">
+      {% include header.html %}
+    </div>
+
+
+    <div class="layout-content">
+
+      <form accept-charset="utf-8" action="https://formspree.io/xpzynenz" method="post">
+        <fieldset id="contact-form">
+          <h1 id="contact-header">GET IN TOUCH</h1>
+
+          <label class="label-header" for="full-name">Full Name</label>
+          <input class="contact-input-field" type="text" name="Name" id="full-name" placeholder="First and Last Name"
+            required="">
+
+          <label class="label-header" for="email-address">Email Address</label>
+          <input class="contact-input-field" type="email" name="Email" id="email-address"
+            placeholder="email@gmail.com" required="">
+
+          <label class="label-header" for="Subject">Subject</label>
+          <input class="contact-input-field" type="text" name="Subject" id="subject"
+            placeholder="Subject" required="">
+
+          <label class="label-header" for="message">Message</label>
+          <textarea class="contact-input-field" rows="10" name="Message" id="message" minlength="10"
+            placeholder="Leave me a message. Thanks!" required=""></textarea>
+
+
+          <!-- Spam protector -->
+          <input type="text" name="_gotcha" style="display:none">
+
+
+          <button id="contact-submit-btn" type="submit">Submit</button>
+
+          <!-- Thank you redirect -->
+          <!-- Not working -->
+          <input type="hidden" name="_next" value="https://conradli.com">
+        </fieldset>
+      </form>
+
+    </div>
+
+    <div class="layout-footer">
+      {% include footer.html %}
+    </div>
+  </div>
+
+
+  <!-- Scripts go below here -->
+  <script type="text/javascript" src="{{ '/assets/js/main.js' | relative_url }} "></script>
+
+
+</body>
+
+</html>

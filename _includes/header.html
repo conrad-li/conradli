@@ -1,0 +1,103 @@
+<style>
+  input:checked+.slider {background-image: url("{{ '../../assets/core/moon-black.svg' | relative_url}}");}
+  .slider.round {background-image: url("{{ '../../assets/core/day-sunny.svg' | relative_url }}");}
+</style>
+
+<section>
+  <!-- Overlay visible for mobile-->
+  <div id="myNav" class="overlay" aria-label="Navigation menu">
+    <!-- The overlay -->
+    <div class="overlay-top">
+      <span onclick="closeNav()" aria-label="Close navigation menu">
+        <a href="javascript:void(0)" id="closeNav" class="fas fa-times inactive"></a>
+      </span>
+    </div>
+
+    <div class="overlay-inner">
+      <div class="overlay-content">
+        <ul class="layout-header-menu">
+          {% for menu in site.menu %}
+          <li class="nav-link" data-menu-link="{{ menu.link }}">
+            <a class="nav-link-text" href="{{ menu.link | relative_url }}" aria-label="Click here for {{ menu.text }}">{{ menu.text }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <span class="toggle-menu" onclick="openNav()" aria-label="Open navigation menu">
+    <i id="openNav" class="fa fa-bars active"></i>
+  </span>
+  <!-- End overlay layout -->
+
+
+
+  <!-- Normal header layout -->
+  <div class="layout-header-top">
+    <div class="layout-header-avatar" aria-describedby="github-avatar">
+      {% if site.github.owner_gravatar_url %}
+      <img class="layout-header-avatar-img" id="github-avatar" src="{{ site.avatar | default: site.github.owner_gravatar_url }}" alt="Conrad's Avatar">
+      {% else %}
+      <img class="layout-header-avatar-img" src="https://secure.gravatar.com/avatar/?d=mm&r=g&s=150" aria-describedby="github-avatar">
+      {% endif %}
+    </div>
+
+    <div class="layout-header-info" aria-label="Info about Conrad"> 
+      <h2 class="layout-header-title">
+        <a href="{{ site.url }}">{{ site.title | default: site.github.owner_name }}</a>
+      </h2>
+      {% if site.subtitle %}
+      <h3 class="layout-header-subtitle">
+        {{ site.subtitle }}
+      </h3>
+      {% endif %}
+    </div>
+  </div>
+
+
+  <div class="layout-header-middle">
+    <!-- Name in top left, Tablet design -->
+    <h1 class="layout-header-title-medium">
+      <a href="{{ site.url }}" aria-label="Click here to visit my home page {{ site.url }}">{{ site.title | default: site.github.owner_name }} </a>
+    </h1>
+    <!-- End tablet design -->
+
+    <ul class="layout-header-menu" aria-label="Navigation menu">
+      {% for menu in site.menu %}
+      {% if menu.link == page.url%}
+      <li name="{{ menu.link }}" data-menu-link="{{ menu.link }}" class="nav-link active">
+        <a class="nav-link-text" href="{{ menu.link | relative_url }}">{{ menu.text }}</a>
+      </li>
+      {% else %}
+      <li name="{{ menu.link }}" data-menu-link="{{ menu.link }}" class="nav-link">
+        <a class="nav-link-text" href="{{ menu.link | relative_url }}">{{ menu.text }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+
+  <div class="layout-header-bottom">
+    <div class="layout-header-small">
+      <span>SOCIAL MEDIA</span>
+    </div>
+    <div class="layout-header-social">
+      {% if site.social_icons %}
+      <ul>
+        {% for social in site.social_icons %}
+        {% if social.icon %}
+        <li><a href="{{ social.link }}" target="_blank" rel="noreferrer noopener" aria-label="Link to {{social.name}}"><i class="{{ social.icon }}"></i></a></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <label class="theme-switch" for="dark-mode-header">
+        <input type="checkbox" id="dark-mode-header" name="Dark mode toggle"/>
+        <div class="slider round" aria-describedby="dark-mode-header"></div>
+      </label>
+    </div>
+  </div>
+  
+</section>

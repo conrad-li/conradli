@@ -1,0 +1,205 @@
+
+// Resume header bar
+#resume {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+#download-resume, #download-resume-icon {
+  float: right;
+  font-size: 24px;
+  color: var(--secondary-color);//rgba(182, 180, 179, 0.8);
+  margin: 2rem 0 0 0 !important;
+}
+
+#download-resume {
+  padding-right: 0.25rem;
+  line-height: 1.5;
+}
+
+#download-resume-icon {
+  line-height: 1.2;
+}
+
+
+.download-section:hover {
+  #download-resume,
+  .fas.fa-download,
+  #download-resume-icon {
+    color: var(--hyperlink-color-hover);
+    text-decoration: none;
+  }
+  
+}
+
+
+
+// section header
+.resume-section-header {
+  @include section_border;
+  margin-bottom: 1rem;
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -.05rem;
+    margin: 0;
+  }
+}
+
+
+
+
+
+// resume content body styles
+
+.content-section {
+  margin: 0 0 3rem;
+
+  .resume-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .resume-item-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .resume-item-title {
+    @include sans_bold;
+    margin: 0 0 .5rem;
+    font-size: 1.5rem;
+    letter-spacing: -.05rem;
+    line-height: 1;
+  }
+
+  .resume-item-date {
+    @include sans_bold;
+    margin: 0 0 .5rem;
+    font-size: 1.125rem;
+    letter-spacing: -.05rem;
+    line-height: 1.5;
+    text-align: right;
+  }
+
+  .resume-item-details {
+    color: var(--font-color);
+    font-size: 1.125rem;
+    margin: 0 0 0.5rem;
+    line-height: 1;
+
+    &.award-title {
+      font-size: 1rem;
+    }
+  }
+
+  .resume-item-title,
+  .resume-item-date,
+  .resume-item-details,
+  .resume-item-summary,
+  .resume-item-list {
+    a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      border-bottom: 1px solid;
+
+      &:hover {
+        border-bottom: none;
+        color: var(--hyperlink-color-hover);
+      }
+    }
+  }
+
+  .resume-item-title a {
+    color: var(--secondary-color);
+  }
+
+  .resume-item-summary {
+    margin: 0 0 0.25rem;
+  }
+}
+
+
+
+
+
+
+.print-only {
+  display: none !important
+}
+
+@media print {
+  .no-print {
+    display: none !important
+  }
+
+  .print-only {
+    display: block !important
+  }
+
+  body {
+    font-size: 12px;
+    line-height: 1rem;
+  }
+
+  .page-header {
+    padding: 1rem 0 .4rem;
+
+    .header-name {
+      @include sans_bold;
+      font-size: 2rem;
+      margin: 0 0 .2rem;
+    }
+  }
+
+  .section-header {
+    @include section_border_thin;
+
+    margin-bottom: 1rem;
+
+    h2 {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  .content-section {
+    margin: 0 0 1rem;
+
+    .resume-item {
+      margin-bottom: 1rem;
+    }
+
+    .resume-item-title {
+      font-size: 16px;
+      line-height: .7em;
+    }
+
+    .resume-item-details {
+      font-size: 12px;
+      margin: 0 0 .5rem;
+      line-height: .7em;
+      font-style: italic;
+
+      &.award-title {
+        font-size: 11px;
+      }
+    }
+  }
+
+}
+
+
+
+@media print,
+screen and (max-width: 767px) and (min-width: 100px) {
+
+  #download-resume, #download-resume-icon {
+    margin: 1.5rem 0 0 0 !important;
+  
+  }
+  .resume-item-date {
+    display: none;
+  }
+}
+

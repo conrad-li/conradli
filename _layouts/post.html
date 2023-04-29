@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-theme={{site.default_theme}}>
+
+<head>
+  {% include head.html %}
+
+  <meta name="Description" content="{{ page.title }}, written {{ page.date | date: '%B %-d, %Y' }}">
+
+  {% seo %}
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="layout-header">
+      {% include header.html %}
+    </div>
+    
+    <div class="layout-content">
+      {% include post.html %}
+    </div>
+
+    <div class="layout-footer"> 
+      {% include footer.html %}
+    </div>
+  </div>
+
+  <!-- Scripts go below here -->
+  <script type="text/javascript" src="{{ '/assets/js/main.js' | relative_url }} "></script>
+
+</body>
+
+</html>

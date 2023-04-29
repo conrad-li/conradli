@@ -1,0 +1,71 @@
+#contact-form  {
+    padding: 0rem 2rem 2rem;
+    border: none;
+}
+
+#contact-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+.label-header {
+    font-size: 1.25rem;
+    margin-bottom: .1rem;
+}
+
+
+.contact-input-field {
+    width: 100%;
+    margin-bottom: .75rem;
+    color: black;
+    border: none;
+    border: solid 1px var(--border-color);
+    border-radius: .5rem;
+    padding: .5rem;
+    
+}
+
+.contact-input-field:focus, #contact-submit-btn:focus  {
+    outline: none;
+    border: 2px solid var(--secondary-color) !important;
+
+}
+
+#full-name, #email-address, #subject {
+    height: 3rem;
+}
+
+
+#message {
+    resize: none;
+    height: 17rem;
+}
+
+#contact-submit-btn {
+    display: block;
+    width: 12rem;
+    margin: .5rem auto;
+    padding: .5rem;
+    font-size: 1.5rem;
+    background: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: .5rem;
+}
+
+
+#contact-submit-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+@media print, screen and (max-width: 767px) and (min-width: 100px) {
+    #contact-form {
+        padding: 0rem 0rem 2rem;
+    }
+
+    #contact-header {
+        margin-bottom: .5rem;
+    }
+
+
+}

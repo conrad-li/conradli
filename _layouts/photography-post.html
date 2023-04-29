@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme={{site.default_theme}}>
+
+<head>
+    {% include head.html %}
+
+    <meta name="Description" content="Photography taken in {{ page.place }}, {{ page.country }} on {{ page.date | date: '%B %-d, %Y' }}">
+
+    {% seo %}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="layout-header">
+
+            {% include header.html %}
+
+        </div>
+
+
+        <div class="layout-content" >
+
+
+            <h1 class="post-title"> {{ page.title }} </h1>
+            <h2 class="post-date"> {{ page.date | date: "%B %-d, %Y" }} </h2>
+            {{ content }}
+
+            {% if page.carousel %}
+            <ul class="image-gallery" id="image-gallery">
+                {% for file in page.carousel %}
+                <li class="image-box">
+
+                    <a class="image-caption" href="{{ file.large | relative_url }}">
+                        <picture>
+                            <source data-srcset="{{ file.image | relative_url }}" media="(min-width: 768px)">
+                            <img class="image-img lazyload" alt="{{ file.caption }}"
+                            src="{{ file.timg | relative_url }}" data-src="{{ file.small | relative_url }}">
+                        </picture>
+
+                        <span class="image-caption-placement" aria-hidden="true">{{ file.caption }}</span>
+
+                    </a>
+
+
+                    
+                </li>
+
+
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            <div class="prev-next-nav">
+                {% for post in site.photography %}
+                    {% if post.url == page.url %} 
+                        {% if post.previous.url  %}
+                        <a href="{{ post.previous.url | relative_url }}">
+                            <button class="prev-btn">
+                                &laquo; {{ post.previous.place }} 
+                            </button>
+                        </a>
+                        {% endif %}
+
+                        {% if post.next.url %} 
+                        <a href="{{ post.next.url | relative_url }}">
+                            <button class="next-btn">
+                                {{ post.next.place }} &raquo;
+                            </button>
+                        </a>
+                        {% endif %}
+                    {% endif %} 
+                {% endfor %}
+            </div>
+
+
+
+        </div>
+
+        
+
+        <div class="layout-footer">
+            {% include footer.html %}
+        </div>
+    </div>
+
+
+    <!-- Scripts go below here -->
+    <script type="text/javascript" src="{{ '/assets/js/main.js' | relative_url }} "></script>
+    <script defer type="text/javascript" src="{{ 'assets/js/lightbox.js' | relative_url }}"></script>
+    <script type="text/javascript" src="{{ 'assets/js/lazysizes.min.js' | relative_url }}"></script>
+
+
+
+
+</body>
+
+</html>

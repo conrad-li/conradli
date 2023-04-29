@@ -1,0 +1,93 @@
+/*Simple css to style it like a toggle switch*/
+
+.theme-switch {
+  display: inline-block;
+  height: 22px;
+  position: relative;
+  left: 198px;
+  bottom: 30px;
+  width: 40px;
+
+}
+
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ccc;
+
+  cursor: pointer;
+  position: absolute;
+  transition: .4s;
+
+}
+
+.slider:before {
+  position: absolute;
+  left: 3px;
+  bottom: 2px;
+  content: "";
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  transition: .4s;
+
+}
+
+
+
+
+input:checked+.slider {
+  background-color: var(--secondary-color);
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position-x: 4px;
+  background-position-y: 4px;
+  -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+
+}
+
+input:checked+.slider:before {
+  transform: translateX(16px);
+}
+
+.slider.round {
+  border-radius: 22px;
+  background-repeat: no-repeat;
+  background-size: 14px;
+  background-position-x: 23px;
+  background-position-y: 4px;
+
+  -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+  
+}
+
+.slider.round:before {
+  border-radius: 50%;
+  
+}
+
+
+@media print, screen and (max-width: 1099px) and (min-width: 768px) {
+  .theme-switch {
+    left: -190px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 100px) {
+  .theme-switch {
+    left: 55px;
+  }
+}

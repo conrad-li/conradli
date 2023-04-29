@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-theme={{site.default_theme}}>
+
+<head>
+  {% include head.html %}
+
+  <meta name="Description" content="Photography gallery.">
+
+  {% seo %}
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="layout-header">
+
+      {% include header.html %}
+
+    </div>
+
+
+    <div class="layout-content">
+
+      <h1 class="page-header">Photography</h1>
+      {% assign photography = site.photography | sort: 'date' | reverse %}
+
+      <div class="photo-grid">
+        {% for photo in photography %}
+
+        <a href="{{ site.url }}{{ photo.url }}">
+
+          <div class="photo-item">
+            <img class="photo-display" src="{{ site.baseurl }}{{ photo.display }}" 
+            alt="Polaroid image for {{ photo.place }}, {{ photo.country }}">
+            <h2 class="photo-title">{{photo.place}}, {{photo.country}}</h2>
+            <time class="photo-date">{{ photo.date | date: "%m-%d-%Y" }}</time>
+          </div>
+        </a>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+    <div class="layout-footer">
+      {% include footer.html %}
+    </div>
+  </div>
+
+
+  <!-- Scripts go below here -->
+  <script type="text/javascript" src="{{ '/assets/js/main.js' | relative_url }} "></script>
+
+
+</body>
+
+</html>
