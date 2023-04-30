@@ -26,9 +26,9 @@
 
       <div class="portfolio-grid">
         {% for proj in portfolio %}
-        <a href="{{ site.url}}{{ proj.url }}">
+        <a href="{{ proj.url | relative_url }}">
           <div class="project-item">
-            <img class="project-display" src="{{ site.baseurl }}{{ proj.display }}">
+            <img class="project-display" src="{{ proj.display | relative_url }}">
             <h2 class="project-title">{{proj.title}}</h2>
             <!-- <time class="project-date">{{ proj.date | date: "%m-%d-%Y" }}</time> -->
           </div>

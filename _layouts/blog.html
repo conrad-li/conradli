@@ -26,9 +26,9 @@
         <ul>
 
           <li class="blog-entry">
-            <a href="{{ post.url }}">
+            <a href="{{ post.url | relative_url }}">
 
-              <div class="blog-header" href="{{ post.url }}">
+              <div class="blog-header" href="{{ post.url | relative_url }}">
                 <h2>{{ post.title }}</h2>
                 <time datetime="{{ post.date | date: "%m-%d-%Y" }}">{{ post.date | date_to_long_string }}</time>
               </div>
