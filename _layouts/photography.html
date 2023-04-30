@@ -26,10 +26,10 @@
       <div class="photo-grid">
         {% for photo in photography %}
 
-        <a href="{{ site.url }}{{ photo.url }}">
+        <a href="{{ photo.url | relative_url }}">
 
           <div class="photo-item">
-            <img class="photo-display" src="{{ site.baseurl }}{{ photo.display }}" 
+            <img class="photo-display" src="{{ photo.display | relative_url }}" 
             alt="Polaroid image for {{ photo.place }}, {{ photo.country }}">
             <h2 class="photo-title">{{photo.place}}, {{photo.country}}</h2>
             <time class="photo-date">{{ photo.date | date: "%m-%d-%Y" }}</time>
