@@ -3,6 +3,7 @@ subtitle: Software Engineer II
 description: 
 avatar:
 
+baseurl: 
 default_theme: "dark"
 
 about: 
@@ -19,28 +20,28 @@ about:
 defaults:
   -
     scope:
-      path: "/_posts/"
+      path: "/_posts"
     values:
       layout: "post"
 
 collections:
   pages:
     output: true
-    permalink: /:title/
+    permalink: /:title
   
   posts:
     output: true
-    permalink: /blog/:title/
+    permalink: /blog/:title
     category: /blog/
 
   photography:
     output: true
-    permalink: /photography/:title/
+    permalink: /photography/:title
     category: /photography/
   
   portfolio:
     output: true
-    permalink: /portfolio/:title/
+    permalink: /portfolio/:title
     category: /portfolio/
 
 
@@ -51,23 +52,23 @@ menu:
     icon: ""
 
   - text: Blog
-    link: /blog/
+    link: /blog
     icon: ""
     
   #- text: Portfolio
-  #  link: /portfolio/
+  #  link: /portfolio
   #  icon: ""
   
   - text: Photography
-    link: /photography/
+    link: /photography
     icon: ""
 
   - text: Resume
-    link: /resume/
+    link: /resume
     icon: ""
 
  # - text: Contact
- #   link: /contact/
+ #   link: /contact
  #   icon: ""
   
 
@@ -92,10 +93,10 @@ social_icons:
 ###########################
 resume_name:                    "Conrad Li"
 resume_title:                   ""
-resume_contact_email:           "conradzli@hotmail.com"
+resume_contact_email:           "conradzli [at] hotmail.com"
 resume_contact_telephone:       ""
 resume_contact_address:         ""
-resume_header_contact_info:     "No address at the moment • conradzli@hotmail.com"
+resume_header_contact_info:     "No address at the moment • conradzli [at] hotmail.com"
 display_header_contact_info:    "false"
 
 
