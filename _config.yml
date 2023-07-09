@@ -1,5 +1,5 @@
 title: Conrad Li
-subtitle: Software Engineer II
+subtitle: Software Engineer
 description: 
 avatar:
 
@@ -7,20 +7,13 @@ baseurl:
 default_theme: "dark"
 
 about: 
-  "I am a software engineer at Bank of America in New York, NY. I graduated in 2021 from Bowdoin College with a major in Computer Science and a minor in Sociology (and Economics, informally). I am interested in the intersection between tech and education, specifically providing opportunities for first-gen college students like myself. 
-
-  <br><br>
-
-  For summer 2020, I was a Global Tech Analyst at Bank of America where my team delivered the top three time series prediction models for daily ATM volume estimations out of all intern groups.
-
-  <br><br>
-  
-  <b>At this time, I am not looking for a job, but I am open to new opportunities! I am interested in exploring product management and software engineer.</b> I have experience with Python, Java, C++, Kotlin, HTML, CSS/SASS, JS, machine learning models, agile development, and a willingness to learn."
+  "I am a software engineer at Bank of America. I graduated in 2021 from Bowdoin College with a major in Computer Science and a minor in Sociology (and Economics, informally). I am proficient with Python and have experience in Java, C++, Kotlin, HTML, and CSS/SASS."
 
 defaults:
   -
     scope:
       path: "/_posts"
+
     values:
       layout: "post"
 
